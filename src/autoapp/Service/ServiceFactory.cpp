@@ -28,7 +28,7 @@
 #include <f1x/openauto/autoapp/Service/SystemAudioService.hpp>
 #include <f1x/openauto/autoapp/Service/AudioInputService.hpp>
 #include <f1x/openauto/autoapp/Service/SensorService.hpp>
-#include <f1x/openauto/autoapp/Service/BluetoothService.hpp>
+// #include <f1x/openauto/autoapp/Service/BluetoothService.hpp>
 #include <f1x/openauto/autoapp/Service/InputService.hpp>
 #include <f1x/openauto/autoapp/Projection/QtVideoOutput.hpp>
 #include <f1x/openauto/autoapp/Projection/OMXVideoOutput.hpp>
@@ -65,7 +65,7 @@ ServiceList ServiceFactory::create(aasdk::messenger::IMessenger::Pointer messeng
     this->createAudioServices(serviceList, messenger);
     serviceList.emplace_back(std::make_shared<SensorService>(ioService_, messenger));
     serviceList.emplace_back(this->createVideoService(messenger));
-    serviceList.emplace_back(this->createBluetoothService(messenger));
+    // serviceList.emplace_back(this->createBluetoothService(messenger));
     serviceList.emplace_back(this->createInputService(messenger));
 
     return serviceList;
@@ -81,26 +81,26 @@ IService::Pointer ServiceFactory::createVideoService(aasdk::messenger::IMessenge
     return std::make_shared<VideoService>(ioService_, messenger, std::move(videoOutput));
 }
 
-IService::Pointer ServiceFactory::createBluetoothService(aasdk::messenger::IMessenger::Pointer messenger)
-{
-    projection::IBluetoothDevice::Pointer bluetoothDevice;
-    switch(configuration_->getBluetoothAdapterType())
-    {
-    case configuration::BluetoothAdapterType::LOCAL:
-        bluetoothDevice = projection::IBluetoothDevice::Pointer(new projection::LocalBluetoothDevice(), std::bind(&QObject::deleteLater, std::placeholders::_1));
-        break;
+// IService::Pointer ServiceFactory::createBluetoothService(aasdk::messenger::IMessenger::Pointer messenger)
+// {
+//     projection::IBluetoothDevice::Pointer bluetoothDevice;
+//     switch(configuration_->getBluetoothAdapterType())
+//     {
+//     case configuration::BluetoothAdapterType::LOCAL:
+//         bluetoothDevice = projection::IBluetoothDevice::Pointer(new projection::LocalBluetoothDevice(), std::bind(&QObject::deleteLater, std::placeholders::_1));
+//         break;
 
-    case configuration::BluetoothAdapterType::REMOTE:
-        bluetoothDevice = std::make_shared<projection::RemoteBluetoothDevice>(configuration_->getBluetoothRemoteAdapterAddress());
-        break;
+//     case configuration::BluetoothAdapterType::REMOTE:
+//         bluetoothDevice = std::make_shared<projection::RemoteBluetoothDevice>(configuration_->getBluetoothRemoteAdapterAddress());
+//         break;
 
-    default:
-        bluetoothDevice = std::make_shared<projection::DummyBluetoothDevice>();
-        break;
-    }
+//     default:
+//         bluetoothDevice = std::make_shared<projection::DummyBluetoothDevice>();
+//         break;
+//     }
 
-    return std::make_shared<BluetoothService>(ioService_, messenger, std::move(bluetoothDevice));
-}
+//     return std::make_shared<BluetoothService>(ioService_, messenger, std::move(bluetoothDevice));
+// }
 
 IService::Pointer ServiceFactory::createInputService(aasdk::messenger::IMessenger::Pointer messenger)
 {
