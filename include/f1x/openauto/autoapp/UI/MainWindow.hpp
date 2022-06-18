@@ -90,7 +90,7 @@ signals:
     void cameraFlipX();
     void cameraFlipY();
     void openConnectDialog();
-    void openWifiDialog();
+    // void openWifiDialog();
     void openUpdateDialog();
     void showBrightnessSlider();
     void showVolumeSlider();
@@ -184,7 +184,7 @@ private:
 
     char nightModeFile[32] = "/tmp/night_mode_enabled";
     char devModeFile[32] = "/tmp/dev_mode_enabled";
-    char wifiButtonFile[32] = "/etc/button_wifi_visible";
+    // char wifiButtonFile[32] = "/etc/button_wifi_visible";
     char cameraButtonFile[32] = "/etc/button_camera_visible";
     char brightnessButtonFile[32] = "/etc/button_brightness_visible";
     char debugModeFile[32] = "/tmp/usb_debug_mode";
@@ -220,7 +220,7 @@ private:
 
     bool customBrightnessControl = false;
 
-    bool wifiButtonForce = false;
+    // bool wifiButtonForce = false;
     bool cameraButtonForce = false;
     bool brightnessButtonForce = false;
 

@@ -163,7 +163,7 @@ outline: none;
 }</string>
        </property>
        <property name="text">
-        <string>BT / WiFi</string>
+        <string>Deleted WiFi/BT !</string>
        </property>
       </widget>
      </item>
@@ -3002,7 +3002,7 @@ outline: none;</string>
             </sizepolicy>
            </property>
            <property name="title">
-            <string>Wifi Setup</string>
+            <string>No WiFi Setup!</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -3599,7 +3599,7 @@ outline: none;</string>
                </sizepolicy>
               </property>
               <property name="title">
-               <string>Wifi Mode</string>
+               <string>No Wifi Mode</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
