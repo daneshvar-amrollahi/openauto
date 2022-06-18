@@ -1,6 +1,12 @@
 
 # OpenAuto
 
+This is a clean repository from
+[opencardev/openauto](https://github.com/opencardev/openauto).
+
+Our starting point is branch `crankshaft-ng`,
+commit `fd3a00a8e3ecb430838ad263be883eed57d95a37`.
+
 ### Support project
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=R4HXE5ESDR4U4)
 
