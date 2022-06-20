@@ -21,7 +21,7 @@ OpenAuto is an AndroidAuto(tm) headunit emulator based on aasdk library and Qt l
 [See demo video](https://www.youtube.com/watch?v=k9tKRqIkQs8)
 
 ### Supported functionalities
- - 480p, 720p and 1080p with 30 or 60 FPS
+ - 480p with 30FPS.
  - RaspberryPI 3 hardware acceleration support to decode video stream (up to 1080p@60!)
  - Audio playback from all audio channels (Media, System and Speech)
  - Audio input for voice commands
