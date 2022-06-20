@@ -148,9 +148,9 @@ bool InputDevice::handleKeyEvent(QEvent* event, QKeyEvent* key)
         buttonCode = aasdk::proto::enums::ButtonCode::NEXT;
         break;
 
-    // case Qt::Key_M:
-    //     buttonCode = aasdk::proto::enums::ButtonCode::MICROPHONE_1;
-    //     break;
+    case Qt::Key_M:
+        buttonCode = aasdk::proto::enums::ButtonCode::MICROPHONE_1;
+        break;
 
     // case Qt::Key_1:
     //     wheelDirection = WheelDirection::LEFT;
